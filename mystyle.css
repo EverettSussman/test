@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style background twinkling night sky from https://codepen.io/WebSonick/pen/vjmgu */
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+.stars, .twinkling {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display:block;
+}
+
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index:1;
+
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+
+
+/* Fade in paragraph*/
+
+#fade-paragraph {
+	display: inline-block;
+	position: relative;
+	top:0;
+	right:0;
+	bottom:0;
+	width:100%;
+	z-index: 99;
+	font-family: 'Bellefair', serif;
+}
+
+#Main-title, #Sub-title, .nav-button {
+	display: hide;
+	font-size: 8em;
+	color: #efefef;
+	text-align: center;
+
+    -webkit-transition: color 1s ease-in-out, background-color 1s ease-in-out;
+    -moz-transition: color 1s ease-in-out, background-color 1s ease-in-out;
+    -ms-transition: color 1s ease-in-out, background-color 1s ease-in-out;
+    -o-transition: color 1s ease-in-out, background-color 1s ease-in-out;
+    transition: color 1s ease-in-out, background-color 1s ease-in-out;
+
+/*    -webkit-transition: background-color 1s ease-in-out;
+    -moz-transition: background-color 1s ease-in-out;
+    -ms-transition: background-color 1s ease-in-out;
+    -o-transition: background-color 1s ease-in-out;
+    transition: background-color 1s ease-in-out;*/
+}
+
+#Sub-title {
+	font-size: 3em;
+}
+
+/* Navigation Menu */
+#nav-menu {
+	position: relative;
+	width: 50%;
+	height: 10%;
+	left: 25%;
+	margin-top: 4em;
+	display: inline-block;
+	text-align: center;
+	border: #efefef 2px;
+}
+
+.nav-button {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	width: 20%;
+	height: 50%;
+	font-size: 2em;
+	margin-right: 10%;
+	margin-left: 10%;
+	background-color: rgba(0, 0, 0, .28);
+}
+
+.nav-button:hover {
+	color: #f30404;
+	background-color: rgba(240, 219, 219, .28);
+}
+
+.nav-button:active {
+	background-color: rgba(255, 255, 255, .6);
+}
+
+/* Animation Screen style */
+#canvas-container {
+	z-index: 99;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+	margin-top: 5em;
+	left: 0;
+	right: 0;
+	width: 100%;
+	/*background-color: #efefef;*/
+}
+
+#myCanvas {
+	position: relative;
+	border: 2px solid #000;
+	margin-top: 5em;
+	margin-bottom: 2em;
+	display: inline-block;
+	background-color: #efefef;
+}
+
+#animation-buttons {
+	display: inline-block;
+	width: 50%;
+	margin-bottom: 5em;
+}
+
+.animation-button {
+	width: 10em;
+	height: 2em;
+}
+
+/* Animation controls */
+
+#animation-buttons {
+	position: relative;
+	width: 75%;
+	top: 2em;
+	color: #efefef;
+	border: 2px solid #efefef;
+}
+
+#start-stop {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	bottom: 3em;
+}
+
+#start-stop button {
+	text-align: center;
+	width: 20%;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+#time {
+	position: relative;
+	display: inline-block;
+	width: 75%;
+	margin-bottom: 2em;
+}
+
+#time input {
+	width: 40%;
+	text-align: center;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+#timeSlideLabel {
+	position: relative;
+	width: 100%;
+	bottom: 1em;
+}
+
+/* New Body Controls */
+
+#new-body {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 3em;
+}
+
+#create-button-div {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+#create-new-body {
+	position: relative;
+	text-align: center;
+	width: 20%;
+	margin-bottom: 1em;
+}
+
+#body-specs {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.body-attr {
+	position: relative;
+	text-align: center;
+	display: inline-block;
+	width: 30%;
+	margin-bottom: 1em;
+}
+
+#pos input, #vel input, #acc input {
+	position: relative;
+	width: 40%;
+}
+
+#custom-bodies {
+	z-index: 99;
+	position: relative;
+	width: 100%;
+	display: inline-block;
+	color: #efefef;
+	margin-bottom: 5em;
+}
+
+#custom-bodies table {
+	margin: 0 auto;
+	text-align: center;
+	width: 90%;
+	border: 2px solid #efefef;
+}
+
+#col-head {
+	font-weight: 800;
+}
+
+#col-head td {
+	width: 10%;
+	border: 1px solid #efefef;
+}
+
+#footer {
+	position: relative;
+	clear: left;
+	z-index: 99;
+	display: block;
+	width: 100%;
+	color: #efefef;
+}
+
+#footer p {
+	text-align: center;
+	font-size: 2em;
+	font-weight: 800;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+

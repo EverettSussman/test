@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Orbital Simulation</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+	<!-- Slider scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
+	<script src="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="physics.js"></script>
+	<script type="text/javascript" src="animator.js"></script>
+	<script type="text/javascript" src="presets.js"></script>
+	
+</head>
+	<body>
+
+		<!-- Background Night sky -->
+		<div class="stars"></div>
+		<div class="twinkling"></div>
+
+
+		<div id="fade-paragraph">
+			<!-- Title -->
+			<p id="Main-title" style="display: hide"> Dynamic Space </p>
+			<p id="Sub-title"> A Universal Simulator</p>
+
+			<!-- Main navigation bar -->
+			<nav id="nav-menu">
+				<li class="nav-button">Sandbox</li>
+				<li class="nav-button">Preset</li>
+			</nav>
+
+		</div>
+
+		<div id="canvas-container">
+			<canvas id="myCanvas" width=800 height=500></canvas>
+			<div id="animation-buttons">
+				<div id="start-stop">
+					<button type="button" id="start" class="animation-button">Start Animation</button>
+					<button type="button" id="end" class="animation-button">End Animation</button>
+					<button type="button" id="pause" class="animation-button">Pause Animation</button>
+					<button type="button" id="resume" class="animation-button">Resume Animation</button>
+				</div>
+				<div id="time">
+					<p id="timeSlideLabel">Time Speed Multiplier Order of Magnitude: 0</p>
+					<form>
+						<input id="range" type="range" name="timeInput" min="-10" step="1" max="10" value="0" class="slider" onchange="updateTextInput(this.value);">
+<!-- 						<input oninput="timeInput.value=timeAmount.value" id="box" type="text" value="0" name="timeAmount" for="timeInput" onkeyup="updateTextInput(this.value);"/> -->
+					</form>
+				</div>
+				<div id="new-body">
+					<form>
+						<div id="create-button-div">
+							<button type="button" id="create-new-body" class="animation-button" onclick="addBody();">Create New Body</button>
+						</div>
+
+						<div id="body-specs">
+							<div id="name" class="body-attr">
+								<p>Body Name</p>
+								<input type="text" name="mass" value="Earth" id="name-input"/>
+							</div>
+							<div id="mass" class="body-attr">
+								<p>Body Mass</p>
+								<input type="text" name="mass" value="1.0234e24" id="mass-input"/>
+							</div>
+							<div id="pos" class="body-attr">
+								<p>Position</p>
+								<input type="text" name="x" value="0<x<800" id="x-input"/>
+								<input type="text" name="y" value="0<y<500" id="y-input"/>
+							</div>
+							<div id="vel" class="body-attr">
+								<p>Velocity</p>
+								<input type="text" name="x" value="Pixels/time" id="vx-input"/>
+								<input type="text" name="y" value="Pixels/time" id="vy-input"/>
+							</div>
+							<div id="acc" class="body-attr">
+								<p>Acceleration</p>
+								<input type="text" name="x" value="Pixels/time^2" id="ax-input"/>
+								<input type="text" name="y" value="Pixels/time^2" id="ay-input"/>
+							</div>
+
+						</div>
+					</form>
+				</div>
+			</div>
+			<div id="custom-bodies">
+				<table id="objectTable">
+					<tr id="col-head">
+					    <td>Body Name</td>
+					    <td>Body Mass</td>
+					    <td>X Coordinate</td>
+					    <td>Y Coordinate</td>
+					    <td>X Velocity</td>
+					    <td>Y Velocity</td>
+					    <td>X Acceleration</td>
+					    <td>Y Acceleration</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="footer">
+			<p>Made By: Everett Sussman and Jan Geffert</p>
+		</div>
+	</body>
+</html>
